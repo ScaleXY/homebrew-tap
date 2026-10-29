@@ -2,14 +2,16 @@
 # The workflow fills in version and sha256 for each tagged release; the rest is maintained here.
 # Not "headroom": homebrew/cask has an unrelated app by that name, also installed as Headroom.app.
 cask "ai-headroom" do
-  version "0.1.6"
-  sha256 "15a8a4d1ab280be003d905f812b05ea3ca9fb8c2de58d6394e9214c78cc516eb"
+  version "0.1.7"
+  sha256 "f974d81eb7b85ab5c3a3234ac2db0e99181d3a34b1d01cae613fe6c41cb27305"
 
   url "https://github.com/ScaleXY/headroom/releases/download/v#{version}/Headroom-#{version}.dmg"
   name "Headroom"
   desc "Menu bar pace meter for Claude and Codex plan allowances"
   homepage "https://github.com/ScaleXY/headroom"
 
+  # Headroom updates itself in place (Sparkle); brew upgrade --greedy still works.
+  auto_updates true
   conflicts_with cask: "headroom"
   depends_on arch: :arm64
   depends_on macos: :sequoia
