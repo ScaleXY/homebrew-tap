@@ -2,8 +2,8 @@
 # The workflow fills in version and sha256 for each tagged release; the rest is maintained here.
 # Not "headroom": homebrew/cask has an unrelated app by that name, also installed as Headroom.app.
 cask "ai-headroom" do
-  version "0.1.8"
-  sha256 "d32b7dd5bc65fab8aabd037fb02cf689aff6f031bc0e24ad265d9675a97b2e22"
+  version "0.2.0"
+  sha256 "2dd664510e253b052026b579cb803fdc2e981539df527fb3235541f5f105322b"
 
   url "https://github.com/ScaleXY/headroom/releases/download/v#{version}/Headroom-#{version}.dmg"
   name "Headroom"
@@ -20,7 +20,8 @@ cask "ai-headroom" do
   binary "#{appdir}/Headroom.app/Contents/MacOS/headroom"
   manpage "#{appdir}/Headroom.app/Contents/Resources/headroom.1"
 
-  uninstall quit: "com.scalexy.headroom"
+  uninstall quit:      "com.scalexy.headroom",
+            launchctl: "com.scalexy.headroom.fan"
 
   zap trash: [
     "~/Library/Application Support/Headroom",
