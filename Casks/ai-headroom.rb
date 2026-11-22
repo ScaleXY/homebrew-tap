@@ -2,8 +2,8 @@
 # The workflow fills in version and sha256 for each tagged release; the rest is maintained here.
 # Not "headroom": homebrew/cask has an unrelated app by that name, also installed as Headroom.app.
 cask "ai-headroom" do
-  version "0.5.0"
-  sha256 "e962e22ad9506f4caf1043ba6b7981c065e7da070e2ff6735b315952bf7790db"
+  version "0.6.0"
+  sha256 "5bacd5762b23083ac4e4c6e6b6f2c26dad3d5766f5230688e6f2aeb39c4a39bd"
 
   url "https://github.com/ScaleXY/headroom/releases/download/v#{version}/Headroom-#{version}.dmg"
   name "Headroom"
